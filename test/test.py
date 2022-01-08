@@ -7,8 +7,10 @@ import subprocess
 #
 #stdout, stderr
 
-process = subprocess.Popen(['ping', '-c 4', 'python.org'], 
+#process = subprocess.Popen(['ping', '-c 4', 'python.org'], 
+process = subprocess.Popen(['apt-get', 'update'], 
                            stdout=subprocess.PIPE,
+                           stderr=subprocess.PIPE,
                            universal_newlines=True)
 
 while True:
@@ -22,3 +24,8 @@ while True:
         for output in process.stdout.readlines():
             print(output.strip())
         break
+        print('ERR:')
+        for eoutput in process.stderr.readlines():
+            print(eoutput.strip())
+        break
+
