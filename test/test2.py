@@ -1,12 +1,5 @@
 import subprocess
 
-#process = subprocess.Popen(['echo', 'More output'],
-#                     stdout=subprocess.PIPE, 
-#                     stderr=subprocess.PIPE)
-#stdout, stderr = process.communicate()
-#
-#stdout, stderr
-
 #process = subprocess.Popen(['ping', '-c 4', 'python.org'], 
 process = subprocess.Popen(['apt-get', 'update'], 
                            stdout=subprocess.PIPE,
